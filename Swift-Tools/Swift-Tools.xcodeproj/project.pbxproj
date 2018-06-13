@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182BC0CAAA53080CBB3998AD /* Pods_Swift_Tools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9637A69068917373C8F2C11A /* Pods_Swift_Tools.framework */; };
+		BC42FCE820D0DD58007ABA8A /* BQSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCE720D0DD58007ABA8A /* BQSMainViewController.swift */; };
+		BC42FCEE20D0DDEE007ABA8A /* BQSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */; };
+		BC42FCEF20D0DDEE007ABA8A /* BQSConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */; };
+		BC42FCF020D0DDEE007ABA8A /* BQSUIColorHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCED20D0DDEE007ABA8A /* BQSUIColorHexString.swift */; };
+		BC42FCF320D0DF50007ABA8A /* BQSHTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCF220D0DF50007ABA8A /* BQSHTTPManager.swift */; };
 		BC578FD820C533400083A08C /* HorizontalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC578FD720C533400083A08C /* HorizontalCollectionViewController.swift */; };
 		BC578FDA20C533AE0083A08C /* HorizontalScrollLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC578FD920C533AE0083A08C /* HorizontalScrollLayout.swift */; };
 		BC578FDD20C558CA0083A08C /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC578FDC20C558CA0083A08C /* TableController.swift */; };
@@ -23,6 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2072BBBFB71B3C9466F04B1E /* Pods-Swift-Tools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Tools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Tools/Pods-Swift-Tools.debug.xcconfig"; sourceTree = "<group>"; };
+		38E57942D097331C17CFE16B /* Pods-Swift-Tools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Tools.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Tools/Pods-Swift-Tools.release.xcconfig"; sourceTree = "<group>"; };
+		9637A69068917373C8F2C11A /* Pods_Swift_Tools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Tools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC42FCE720D0DD58007ABA8A /* BQSMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSMainViewController.swift; sourceTree = "<group>"; };
+		BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSCameraHandler.swift; sourceTree = "<group>"; };
+		BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSConst.swift; sourceTree = "<group>"; };
+		BC42FCED20D0DDEE007ABA8A /* BQSUIColorHexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSUIColorHexString.swift; sourceTree = "<group>"; };
+		BC42FCF220D0DF50007ABA8A /* BQSHTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSHTTPManager.swift; sourceTree = "<group>"; };
 		BC578FD720C533400083A08C /* HorizontalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewController.swift; sourceTree = "<group>"; };
 		BC578FD920C533AE0083A08C /* HorizontalScrollLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollLayout.swift; sourceTree = "<group>"; };
 		BC578FDC20C558CA0083A08C /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
@@ -45,12 +59,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182BC0CAAA53080CBB3998AD /* Pods_Swift_Tools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082B5E10056A52659834B605 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2072BBBFB71B3C9466F04B1E /* Pods-Swift-Tools.debug.xcconfig */,
+				38E57942D097331C17CFE16B /* Pods-Swift-Tools.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC42FCF120D0DE40007ABA8A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BC42FCF220D0DF50007ABA8A /* BQSHTTPManager.swift */,
+				BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */,
+				BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */,
+				BC42FCED20D0DDEE007ABA8A /* BQSUIColorHexString.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		BC578FD520C532F10083A08C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +128,8 @@
 			children = (
 				BC8CC99820C5169F00A3152A /* Swift-Tools */,
 				BC8CC99720C5169F00A3152A /* Products */,
+				082B5E10056A52659834B605 /* Pods */,
+				FB486C6672211F6D025F1FA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +149,7 @@
 				BC578FDE20C55A420083A08C /* TableView */,
 				BC578FD520C532F10083A08C /* CollectionView */,
 				BC8CC9B320C51BBF00A3152A /* MainClass */,
+				BC42FCF120D0DE40007ABA8A /* Helper */,
 				BC8CC99D20C5169F00A3152A /* Main.storyboard */,
 				BC8CC9A020C5169F00A3152A /* Assets.xcassets */,
 				BC8CC9A220C5169F00A3152A /* LaunchScreen.storyboard */,
@@ -124,8 +162,17 @@
 			isa = PBXGroup;
 			children = (
 				BC8CC9B120C5179000A3152A /* MainXIBView.swift */,
+				BC42FCE720D0DD58007ABA8A /* BQSMainViewController.swift */,
 			);
 			path = MainClass;
+			sourceTree = "<group>";
+		};
+		FB486C6672211F6D025F1FA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9637A69068917373C8F2C11A /* Pods_Swift_Tools.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC8CC9A820C5169F00A3152A /* Build configuration list for PBXNativeTarget "Swift-Tools" */;
 			buildPhases = (
+				B803B18F7F9531164485D881 /* [CP] Check Pods Manifest.lock */,
 				BC8CC99220C5169F00A3152A /* Sources */,
 				BC8CC99320C5169F00A3152A /* Frameworks */,
 				BC8CC99420C5169F00A3152A /* Resources */,
+				C9272EE7D3E970C87A6054D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,19 +245,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B803B18F7F9531164485D881 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swift-Tools-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9272EE7D3E970C87A6054D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swift-Tools/Pods-Swift-Tools-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift-Tools/Pods-Swift-Tools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC8CC99220C5169F00A3152A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BC8CC9B520C51E4B00A3152A /* CollectionViewController.swift in Sources */,
+				BC42FCF020D0DDEE007ABA8A /* BQSUIColorHexString.swift in Sources */,
 				BC8CC99C20C5169F00A3152A /* ViewController.swift in Sources */,
 				BC578FD820C533400083A08C /* HorizontalCollectionViewController.swift in Sources */,
+				BC42FCF320D0DF50007ABA8A /* BQSHTTPManager.swift in Sources */,
+				BC42FCEF20D0DDEE007ABA8A /* BQSConst.swift in Sources */,
 				BC578FDD20C558CA0083A08C /* TableController.swift in Sources */,
+				BC42FCE820D0DD58007ABA8A /* BQSMainViewController.swift in Sources */,
 				BC8CC9BA20C5252100A3152A /* CollectionViewCell.swift in Sources */,
 				BC578FDA20C533AE0083A08C /* HorizontalScrollLayout.swift in Sources */,
 				BC8CC9B220C5179000A3152A /* MainXIBView.swift in Sources */,
 				BC8CC9B720C51FDF00A3152A /* BQSShowCollectionView.swift in Sources */,
+				BC42FCEE20D0DDEE007ABA8A /* BQSCameraHandler.swift in Sources */,
 				BC8CC99A20C5169F00A3152A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +437,7 @@
 		};
 		BC8CC9A920C5169F00A3152A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2072BBBFB71B3C9466F04B1E /* Pods-Swift-Tools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -359,6 +453,7 @@
 		};
 		BC8CC9AA20C5169F00A3152A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38E57942D097331C17CFE16B /* Pods-Swift-Tools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
