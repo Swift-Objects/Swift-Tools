@@ -4,7 +4,7 @@
 //
 //  Created by lemo on 2018/4/20.
 //  Copyright © 2018年 wangli. All rights reserved.
-//
+//  网络请求
 
 import UIKit
 import Alamofire
@@ -107,7 +107,7 @@ class BQSHTTPManager {
             print("无法解析出JSONString")
             return ""
         }
-        let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData!
+        let data : NSData! = try! JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData?
         let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
         return JSONString! as String
     }

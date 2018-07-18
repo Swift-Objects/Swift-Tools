@@ -7,6 +7,8 @@
 //  调用相机-打开相册
 
 import UIKit
+import MobileCoreServices
+import AVKit
 
 class BQSCameraHandler: NSObject {
     
@@ -37,7 +39,17 @@ class BQSCameraHandler: NSObject {
             pickerController.sourceType = .photoLibrary
             currentVC.present(pickerController, animated: true, completion: nil)
         }
-        
+    }
+    
+    //选择视频
+    func selectVideo() {
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.mediaTypes = [kUTTypeMovie as String]
+            imagePicker.delegate = self
+            currentVC?.present(imagePicker, animated: true, completion: nil)
+//        }
     }
     
     //提示
@@ -58,10 +70,15 @@ class BQSCameraHandler: NSObject {
         let photoLibrary = UIAlertAction(title: "打开相册", style: .default) { (alertAction: UIAlertAction) in
             self.openPhoteLibrary()
         }
+        
+        let videoLibrary = UIAlertAction(title: "选取视频", style: .default) { (alertAction: UIAlertAction) in
+            self.selectVideo()
+        }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
         alert.addAction(camera)
         alert.addAction(photoLibrary)
+        alert.addAction(videoLibrary)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
     }
@@ -75,10 +92,25 @@ extension BQSCameraHandler: UIImagePickerControllerDelegate, UINavigationControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imagePickedBlock!(image)
-        } else {
-            print("something went wrong")
+        // 判断是图片还是视频
+        let mediaType = info[UIImagePickerControllerMediaType] as! [String]
+        if mediaType == [kUTTypeVideo as String] {
+            // 视频
+            if let url = info[UIImagePickerControllerMediaURL] as? URL {
+                //播放
+                let play = AVPlayer(url: url)
+                let playController = AVPlayerViewController()
+                playController.player = play
+                currentVC.present(playController, animated: true) {
+                    playController.player?.play()
+                }
+            }
+        } else { //图片
+            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                self.imagePickedBlock!(image)
+            } else {
+                print("something went wrong")
+            }
         }
         currentVC.dismiss(animated: true, completion: nil)
     }

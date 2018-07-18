@@ -31,6 +31,16 @@ class ViewController: UIViewController {
         let tableView = TableController()
         self.navigationController?.pushViewController(tableView, animated: true)
     }
+    
+    @IBAction func SelectImageOrVideo(_ sender: UIButton) {
+        BQSCameraHandler.shared.showCameraAndPhotoLibrary(vc: self)
+        BQSCameraHandler.shared.imagePickedBlock = {(image) in
+            print("选择图片")
+        }
+        
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //
