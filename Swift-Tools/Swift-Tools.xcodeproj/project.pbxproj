@@ -26,6 +26,10 @@
 		BC8CC9B720C51FDF00A3152A /* BQSShowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8CC9B620C51FDF00A3152A /* BQSShowCollectionView.swift */; };
 		BC8CC9BA20C5252100A3152A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8CC9B820C5252100A3152A /* CollectionViewCell.swift */; };
 		BC8CC9BB20C5252100A3152A /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8CC9B920C5252100A3152A /* CollectionViewCell.xib */; };
+		BCB512E92186F790005E70F9 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB512E82186F790005E70F9 /* Scale.swift */; };
+		BCB512EB2186F8C2005E70F9 /* FontScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB512EA2186F8C2005E70F9 /* FontScale.swift */; };
+		BCB512EF2186FE64005E70F9 /* XYYNoMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB512ED2186FE64005E70F9 /* XYYNoMessageView.swift */; };
+		BCB512F02186FE64005E70F9 /* XYYNoMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB512EE2186FE64005E70F9 /* XYYNoMessageView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		BC8CC9B620C51FDF00A3152A /* BQSShowCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSShowCollectionView.swift; sourceTree = "<group>"; };
 		BC8CC9B820C5252100A3152A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BC8CC9B920C5252100A3152A /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		BCB512E82186F790005E70F9 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		BCB512EA2186F8C2005E70F9 /* FontScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontScale.swift; sourceTree = "<group>"; };
+		BCB512ED2186FE64005E70F9 /* XYYNoMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYYNoMessageView.swift; sourceTree = "<group>"; };
+		BCB512EE2186FE64005E70F9 /* XYYNoMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYYNoMessageView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,8 @@
 				BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */,
 				BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */,
 				BC42FCED20D0DDEE007ABA8A /* BQSUIColorHexString.swift */,
+				BCB512E82186F790005E70F9 /* Scale.swift */,
+				BCB512EA2186F8C2005E70F9 /* FontScale.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 			children = (
 				BC8CC99920C5169F00A3152A /* AppDelegate.swift */,
 				BC8CC99B20C5169F00A3152A /* ViewController.swift */,
+				BCB512EC2186FE52005E70F9 /* 空白提示页 */,
 				BC578FDE20C55A420083A08C /* TableView */,
 				BC578FD520C532F10083A08C /* CollectionView */,
 				BC8CC9B320C51BBF00A3152A /* MainClass */,
@@ -165,6 +176,15 @@
 				BC42FCE720D0DD58007ABA8A /* BQSMainViewController.swift */,
 			);
 			path = MainClass;
+			sourceTree = "<group>";
+		};
+		BCB512EC2186FE52005E70F9 /* 空白提示页 */ = {
+			isa = PBXGroup;
+			children = (
+				BCB512ED2186FE64005E70F9 /* XYYNoMessageView.swift */,
+				BCB512EE2186FE64005E70F9 /* XYYNoMessageView.xib */,
+			);
+			path = "空白提示页";
 			sourceTree = "<group>";
 		};
 		FB486C6672211F6D025F1FA7 /* Frameworks */ = {
@@ -239,6 +259,7 @@
 				BC8CC9A420C5169F00A3152A /* LaunchScreen.storyboard in Resources */,
 				BC8CC9A120C5169F00A3152A /* Assets.xcassets in Resources */,
 				BC8CC9BB20C5252100A3152A /* CollectionViewCell.xib in Resources */,
+				BCB512F02186FE64005E70F9 /* XYYNoMessageView.xib in Resources */,
 				BC8CC99F20C5169F00A3152A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8CC9B520C51E4B00A3152A /* CollectionViewController.swift in Sources */,
+				BCB512EF2186FE64005E70F9 /* XYYNoMessageView.swift in Sources */,
 				BC42FCF020D0DDEE007ABA8A /* BQSUIColorHexString.swift in Sources */,
 				BC8CC99C20C5169F00A3152A /* ViewController.swift in Sources */,
 				BC578FD820C533400083A08C /* HorizontalCollectionViewController.swift in Sources */,
@@ -298,10 +320,12 @@
 				BC578FDD20C558CA0083A08C /* TableController.swift in Sources */,
 				BC42FCE820D0DD58007ABA8A /* BQSMainViewController.swift in Sources */,
 				BC8CC9BA20C5252100A3152A /* CollectionViewCell.swift in Sources */,
+				BCB512EB2186F8C2005E70F9 /* FontScale.swift in Sources */,
 				BC578FDA20C533AE0083A08C /* HorizontalScrollLayout.swift in Sources */,
 				BC8CC9B220C5179000A3152A /* MainXIBView.swift in Sources */,
 				BC8CC9B720C51FDF00A3152A /* BQSShowCollectionView.swift in Sources */,
 				BC42FCEE20D0DDEE007ABA8A /* BQSCameraHandler.swift in Sources */,
+				BCB512E92186F790005E70F9 /* Scale.swift in Sources */,
 				BC8CC99A20C5169F00A3152A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

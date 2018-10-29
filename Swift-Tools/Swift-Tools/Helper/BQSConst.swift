@@ -20,8 +20,6 @@ let BQSScreenHeight = UIScreen.main.bounds.height
 let BQSUserDefaults = UserDefaults.standard
 //MARK: BWSFaceStoreUserId
 let BWSFaceStoreUserId = BQSUserDefaults.object(forKey: "FaceUserid")
-//MARK: 屏幕比例
-let BQSScale = BQSScreenWidth / 375 * 1.0
 //MARK: BQWAppThemeColor
 let BQSAppThemeColor = UIColor.init(hex: "#999999")
 

@@ -10,15 +10,39 @@ import UIKit
 
 class BQSMainViewController: UIViewController {
     let mainColor = UIColor.white
+    /// navbar高度
+    let navBarHeight: CGFloat = IS_IPHONE_X ? 88 : 64
+    
+    /// 导航栏高度
+    func navigationBarHeight() -> CGFloat { return self.navigationController?.navigationBar.bounds.height ?? navBarHeight }
+    
+    /// tabBar高度
+    func tabBarHeight() -> CGFloat { return (self.tabBarController?.tabBar.bounds.height)!}
+    
+    /// 状态栏高度
+    func statusBarHeight() -> CGFloat { return UIApplication.shared.statusBarFrame.height }
+    
+    /// 有状态栏 有导航栏 有tabbar 的屏幕高度
+    func haveStatusTabNavigationBarScreenHeight() -> CGFloat {
+        return BQSScreenWidth - navigationBarHeight() - tabBarHeight() - statusBarHeight()
+    }
+    
+    /// 有状态栏 有导航栏 无tabbar 的屏幕高度
+    func haveStatusNavigationBarScreenHeight() -> CGFloat {
+        return BQSScreenWidth - navigationBarHeight() - statusBarHeight()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //背景色-导航栏背景色-状态栏字体色
         self.view.backgroundColor = mainColor
         self.navigationController?.navigationBar.barTintColor = .black
         UIApplication.shared.statusBarStyle = .lightContent
         setNavigationItemTitleWithColor(color: mainColor)
     }
+    
     // MARK:--------------系统的导航栏按钮添加文字或者图片-----------------
     //MARK:左导航栏按钮添加图片
     func addLeftBarButtonItemWithImage(image: UIImage) {
@@ -141,11 +165,6 @@ class BQSMainViewController: UIViewController {
         titleButton.setImage(image, for: .normal)
         titleButton.backgroundColor = mainColor
         return titleButton
-    }
-    
-    //MARK:导航栏和状态栏的高度和
-    func navigationHeight() -> CGFloat {
-        return (self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
     }
     
     override func didReceiveMemoryWarning() {
