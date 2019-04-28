@@ -20,7 +20,7 @@ class BQSCameraHandler: NSObject {
     
     //打开相机
     func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             pickerController.sourceType = .camera
@@ -33,7 +33,7 @@ class BQSCameraHandler: NSObject {
     
     //打开相册
     func openPhoteLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             pickerController.sourceType = .photoLibrary
@@ -45,7 +45,7 @@ class BQSCameraHandler: NSObject {
     func selectVideo() {
 //        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             imagePicker.mediaTypes = [kUTTypeMovie as String]
             imagePicker.delegate = self
             currentVC?.present(imagePicker, animated: true, completion: nil)
@@ -54,7 +54,7 @@ class BQSCameraHandler: NSObject {
     
     //提示
     func showAlertController() {
-        let alert = UIAlertController(title: "错误", message: "设备不支持相机", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert = UIAlertController(title: "错误", message: "设备不支持相机", preferredStyle: UIAlertController.Style.actionSheet)
         let action = UIAlertAction(title: "确定", style: .cancel, handler: nil)
         alert.addAction(action)
         self.currentVC.present(alert, animated: true, completion: nil)
@@ -91,12 +91,15 @@ extension BQSCameraHandler: UIImagePickerControllerDelegate, UINavigationControl
         currentVC.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         // 判断是图片还是视频
-        let mediaType = info[UIImagePickerControllerMediaType] as! [String]
+        let mediaType = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as! [String]
         if mediaType == [kUTTypeVideo as String] {
             // 视频
-            if let url = info[UIImagePickerControllerMediaURL] as? URL {
+            if let url = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaURL)] as? URL {
                 //播放
                 let play = AVPlayer(url: url)
                 let playController = AVPlayerViewController()
@@ -106,7 +109,7 @@ extension BQSCameraHandler: UIImagePickerControllerDelegate, UINavigationControl
                 }
             }
         } else { //图片
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
                 self.imagePickedBlock!(image)
             } else {
                 print("something went wrong")
@@ -114,4 +117,14 @@ extension BQSCameraHandler: UIImagePickerControllerDelegate, UINavigationControl
         }
         currentVC.dismiss(animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

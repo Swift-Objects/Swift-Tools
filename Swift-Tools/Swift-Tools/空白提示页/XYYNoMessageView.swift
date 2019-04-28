@@ -27,7 +27,7 @@ class XYYNoMessageView: MainXIBView {
     @IBOutlet weak var titleLabel: UILabel!
     
     func removeSuperView() {
-        self.removeSuperView()
+        self.removeFromSuperview()
     }
 
     func setViewType(type: MessageViewType?) {

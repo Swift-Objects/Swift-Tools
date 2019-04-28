@@ -13,10 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
-    
-    
     
     @IBAction func addCollectionView(_ sender: Any) {
         let collectionView = CollectionViewController()
@@ -38,9 +35,6 @@ class ViewController: UIViewController {
         BQSCameraHandler.shared.imagePickedBlock = {(image) in
             print("选择图片")
         }
-        
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

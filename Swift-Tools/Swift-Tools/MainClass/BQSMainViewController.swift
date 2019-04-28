@@ -88,7 +88,7 @@ class BQSMainViewController: UIViewController {
     }
     //MARK:设置导航栏title颜色
     func setNavigationItemTitleWithColor(color: UIColor) {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
     }
     
     //MARK: -------------------自定义导航栏大小-------------------------
