@@ -35,7 +35,7 @@ class HorizontalCollectionViewController: UIViewController, UICollectionViewDele
 
         layout.rowNumber = 3
         layout.lineNumber = 3
-        layout.scrollDirection = UICollectionViewScrollDirection.horizontal
+        layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
         layout.sectionInset = UIEdgeInsets(top: 0, left: left, bottom: 0, right: left)

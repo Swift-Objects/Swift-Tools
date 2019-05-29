@@ -77,10 +77,17 @@ var UserId = "666"
 
 
 //MARK: ----------------- 文件路径 -----------------
+// MARK: documentPath
 let documentPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
+// MARK: cachesPath
+let cachesPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
 
+// MARK: homePath
+let homePath: String = NSHomeDirectory()
 
+// MARK: tmpPath
+let tmpPath: String = NSTemporaryDirectory()
 
 
 

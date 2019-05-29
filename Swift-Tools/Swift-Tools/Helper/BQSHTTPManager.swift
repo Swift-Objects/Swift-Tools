@@ -11,10 +11,10 @@ import Alamofire
 
 
 class BQSHTTPManager {
-    //单例
     let mainPath = "http://bq.pingpingapp.com/"
     let header: HTTPHeaders = ["APP-KEY": "gVTXMOWz"]
     
+    //单例
     static let shared = BQSHTTPManager()
     private init() {}
     

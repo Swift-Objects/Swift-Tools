@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182BC0CAAA53080CBB3998AD /* Pods_Swift_Tools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9637A69068917373C8F2C11A /* Pods_Swift_Tools.framework */; };
+		BC157C2B229E1EA70098031A /* SaveAndGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC157C2A229E1EA70098031A /* SaveAndGetData.swift */; };
 		BC42FCE820D0DD58007ABA8A /* BQSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCE720D0DD58007ABA8A /* BQSMainViewController.swift */; };
 		BC42FCEE20D0DDEE007ABA8A /* BQSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */; };
 		BC42FCEF20D0DDEE007ABA8A /* BQSConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */; };
@@ -36,6 +37,7 @@
 		2072BBBFB71B3C9466F04B1E /* Pods-Swift-Tools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Tools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Tools/Pods-Swift-Tools.debug.xcconfig"; sourceTree = "<group>"; };
 		38E57942D097331C17CFE16B /* Pods-Swift-Tools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Tools.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Tools/Pods-Swift-Tools.release.xcconfig"; sourceTree = "<group>"; };
 		9637A69068917373C8F2C11A /* Pods_Swift_Tools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Tools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC157C2A229E1EA70098031A /* SaveAndGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAndGetData.swift; sourceTree = "<group>"; };
 		BC42FCE720D0DD58007ABA8A /* BQSMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSMainViewController.swift; sourceTree = "<group>"; };
 		BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSCameraHandler.swift; sourceTree = "<group>"; };
 		BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQSConst.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				BC42FCF220D0DF50007ABA8A /* BQSHTTPManager.swift */,
+				BC157C2A229E1EA70098031A /* SaveAndGetData.swift */,
 				BC42FCEB20D0DDED007ABA8A /* BQSCameraHandler.swift */,
 				BC42FCEC20D0DDEE007ABA8A /* BQSConst.swift */,
 				BC42FCED20D0DDEE007ABA8A /* BQSUIColorHexString.swift */,
@@ -314,6 +317,7 @@
 				BC8CC9B520C51E4B00A3152A /* CollectionViewController.swift in Sources */,
 				BCB512EF2186FE64005E70F9 /* XYYNoMessageView.swift in Sources */,
 				BC42FCF020D0DDEE007ABA8A /* BQSUIColorHexString.swift in Sources */,
+				BC157C2B229E1EA70098031A /* SaveAndGetData.swift in Sources */,
 				BC8CC99C20C5169F00A3152A /* ViewController.swift in Sources */,
 				BC578FD820C533400083A08C /* HorizontalCollectionViewController.swift in Sources */,
 				BC42FCF320D0DF50007ABA8A /* BQSHTTPManager.swift in Sources */,

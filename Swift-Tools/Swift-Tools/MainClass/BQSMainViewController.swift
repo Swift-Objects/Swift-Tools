@@ -39,9 +39,16 @@ class BQSMainViewController: UIViewController {
         //背景色-导航栏背景色-状态栏字体色
         self.view.backgroundColor = mainColor
         self.navigationController?.navigationBar.barTintColor = .black
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
+        setNeedsStatusBarAppearanceUpdate()
         setNavigationItemTitleWithColor(color: mainColor)
     }
+    
+    var darkMode = false
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return darkMode ? .default : .lightContent
+    }
+    
     
     // MARK:--------------系统的导航栏按钮添加文字或者图片-----------------
     //MARK:左导航栏按钮添加图片
