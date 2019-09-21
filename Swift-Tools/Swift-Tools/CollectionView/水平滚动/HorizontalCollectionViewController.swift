@@ -8,14 +8,14 @@
 
 import UIKit
 
-let ScreenWidth = UIScreen.main.bounds.width
+let collectionViewWidth = UIScreen.main.bounds.width - 21
 let ScreenHeight = UIScreen.main.bounds.height
-
 
 class HorizontalCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let identifier = "CollectionViewCell"
     var collectionView: UICollectionView?
+    let number: Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,20 +27,28 @@ class HorizontalCollectionViewController: UIViewController, UICollectionViewDele
     
     func addCollectionView() {
         
-        let left: CGFloat = 3
-        let spacing: CGFloat = 3
-        let number: Int = 3
-        let width = (self.view.frame.width - left * 2 - CGFloat(number - 1) * spacing) / CGFloat(number)
+        let left: CGFloat = 5.5
+        let spacing: CGFloat = 11
+        let top: CGFloat = 3
+        let rowNumber: Int = 3
+        let lineNumber: Int = 1
+        let width = (collectionViewWidth - left * 2 - CGFloat(rowNumber - 1) * spacing) / CGFloat(rowNumber)
         let layout = HorizontalScrollLayout()
-
-        layout.rowNumber = 3
-        layout.lineNumber = 3
+        
+        layout.rowNumber = rowNumber
+        layout.lineNumber = lineNumber
+        layout.left = left
+        layout.spacing = spacing
+        layout.top = top
+        layout.width = width
+        layout.number = number
+        
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
         layout.sectionInset = UIEdgeInsets(top: 0, left: left, bottom: 0, right: left)
-        layout.itemSize = CGSize(width: width, height: width)
-        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        layout.itemSize = CGSize(width: width, height: width * 0.5)
+        collectionView = UICollectionView(frame: CGRect(x: 10.5, y: 100, width: collectionViewWidth, height: width + 6), collectionViewLayout: layout)
         collectionView?.backgroundColor = .white
         collectionView?.delegate = self
         collectionView?.dataSource = self
@@ -53,6 +61,7 @@ class HorizontalCollectionViewController: UIViewController, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionViewCell
+        
         return cell
     }
     
@@ -61,7 +70,7 @@ class HorizontalCollectionViewController: UIViewController, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 123
+        return number
     }
     
     
@@ -75,15 +84,4 @@ class HorizontalCollectionViewController: UIViewController, UICollectionViewDele
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
