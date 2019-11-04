@@ -8,28 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BQSMainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
-        
     }
     
     @IBAction func addCollectionView(_ sender: Any) {
-        let collectionView = CollectionViewController()
-        self.navigationController?.pushViewController(collectionView, animated: true)
+        collectionViewController()
     }
     
     @IBAction func horizontalScrollCollectionView(_ sender: Any) {
-        let Horizontal = HorizontalCollectionViewController()
-        self.navigationController?.pushViewController(Horizontal, animated: true)
+        horizontalCollectionViewController()
     }
     
     @IBAction func tableView(_ sender: Any) {
-        let tableView = TableController()
-        self.navigationController?.pushViewController(tableView, animated: true)
+        tableController()
     }
     
     @IBAction func SelectImageOrVideo(_ sender: UIButton) {

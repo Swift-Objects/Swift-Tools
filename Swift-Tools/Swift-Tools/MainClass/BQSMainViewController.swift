@@ -104,6 +104,7 @@ class BQSMainViewController: UIViewController {
         let titleLabel = addLabelTitleAndFont(title: title, font: font)
         self.navigationItem.titleView = titleLabel
     }
+    
     //MARK:设置规定大小的左导航栏按钮
     func addCustomLeftBarButtonTitle(title: String) {
         let button = addButtonTitleAndFont(title: title, font: UIFont.systemFont(ofSize: 16))
@@ -111,6 +112,7 @@ class BQSMainViewController: UIViewController {
         leftItem.action = #selector(leftBarButtonItemAction(item:))
         self.navigationItem.leftBarButtonItem = leftItem
     }
+    
     //MARK:设置规定大小的右导航栏按钮
     func addCustomRightBarButtonTitle(title: String) {
         let button = addButtonTitleAndFont(title: title, font: UIFont.systemFont(ofSize: 16))
@@ -118,6 +120,7 @@ class BQSMainViewController: UIViewController {
         rightItem.action = #selector(rightBarButtonItemAction(item:))
         self.navigationItem.rightBarButtonItem = rightItem
     }
+    
     //MARK:设置规定图片大小的左导航栏按钮
     func addCustomLeftBarButtonImage(image: UIImage) {
         let button = addButtonImageAndFont(image: image, size: CGSize(width: 70, height: 44))
@@ -125,6 +128,7 @@ class BQSMainViewController: UIViewController {
         leftItem.action = #selector(leftBarButtonItemAction(item:))
         self.navigationItem.leftBarButtonItem = leftItem
     }
+    
     //MARK:设置规定图片大小的右导航栏按钮
     func addCustomRightBarButtonImage(image: UIImage) {
         let button = addButtonImageAndFont(image: image, size: CGSize(width: 70, height: 44))
@@ -174,14 +178,42 @@ class BQSMainViewController: UIViewController {
         return titleButton
     }
     
+    //MARK:控制器跳转
+    func collectionViewController() {
+        let collectionVC = CollectionViewController();
+        navigationControllerPushVC(VC: collectionVC)
+    }
+    
+    func horizontalCollectionViewController() {
+        let horizontal = HorizontalCollectionViewController()
+        navigationControllerPushVC(VC: horizontal)
+    }
+    
+    func tableController() {
+        let tableVC = TableController()
+        navigationControllerPushVC(VC: tableVC)
+    }
+    
+    func navigationControllerPushVC(VC: BQSMainViewController) {
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
+    
+    func getTableView(cells: [UITableViewCell], cellIdentifiers:[NSString]) -> UITableView {
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: BQSScreenWidth, height: ScreenHeight))
+        for cell in cells {
+            tableView.register(cell.classForCoder, forCellReuseIdentifier: NSStringFromClass(cell.classForCoder))
+        }
+        // tableView?.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: cellIdentifier)
+        return tableView
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
-    
     deinit {
-        print("类销毁通知: \(self.classForCoder)")
+        print("\(self.classForCoder): 类销毁通知")
     }
     
 }

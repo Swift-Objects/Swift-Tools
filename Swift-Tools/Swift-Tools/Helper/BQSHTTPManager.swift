@@ -9,11 +9,9 @@
 import UIKit
 import Alamofire
 
-
 class BQSHTTPManager {
     let mainPath = "http://bq.pingpingapp.com/"
     let header: HTTPHeaders = ["APP-KEY": "gVTXMOWz"]
-    
     //单例
     static let shared = BQSHTTPManager()
     private init() {}
@@ -21,7 +19,6 @@ class BQSHTTPManager {
     //GET-请求
     func getRequestWithURL(path: String, parameter: [String: Any], success: @escaping(_ result: [String: Any]) -> Void, failure: @escaping(_ error: NSError) -> Void) -> Void {
         let urlString = mainPath + path
-//        let header: HTTPHeaders = ["APP-KEY": "gVTXMOWz"]
         Alamofire.request(urlString, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: header).responseJSON { (responseData) in
             if responseData.error != nil {
                 failure(responseData.error! as NSError)
@@ -31,20 +28,17 @@ class BQSHTTPManager {
             }
             return
         }
-        
     }
     
     //POST-请求
     func postRequestWithURL(path: String, parameter: [String: Any], success: @escaping(_ result: String) -> Void, failure: @escaping(_ error: NSError) ->Void) -> Void {
         let urlString = mainPath + path
-//        let header: HTTPHeaders = ["APP-KEY": "Ir0qH2Zh"]
         Alamofire.request(urlString, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: header).responseJSON { (responseData) in
             if responseData.error != nil {
                 failure(responseData.error! as NSError)
             }
             if let json = responseData.result.value {
                 let jsonString = self.getJSONStringFromDictionary(dictionary: json as! NSDictionary)
-                
                 success(jsonString)
             }
             return
@@ -55,7 +49,6 @@ class BQSHTTPManager {
     func sortRequestWithURL(path: String, parameter: [Any], success: @escaping(_ result: String) -> Void, failure: @escaping(_ error: NSError) ->Void) -> Void {
         //通知后台排序
         let url = URL(string: mainPath + path)!
-//        let header: HTTPHeaders = ["APP-KEY": "Ir0qH2Zh"]
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -68,25 +61,16 @@ class BQSHTTPManager {
                 }
                 if let json = responseData.result.value {
                     let jsonString = self.getJSONStringFromDictionary(dictionary: json as! NSDictionary)
-                    
                     success(jsonString)
                 }
                 return
         }
-        
     }
-    
-    
-    
     
     //删除收藏图片
     func postDeleteImageRequestWithURL(path: String, parameter: [String: Any], success: @escaping(_ result: String) -> Void, failure: @escaping(_ error: NSError) ->Void) -> Void {
         let urlString = mainPath + path
-//        let header: HTTPHeaders = ["APP-KEY": "Ir0qH2Zh"]
-        
         Alamofire.request(urlString, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) in
-            
-            
             if responseData.error != nil {
                 failure(responseData.error! as NSError)
             }
@@ -112,7 +96,6 @@ class BQSHTTPManager {
         return JSONString! as String
     }
     
-    
     func downloadFile(filePath: String, fileName:String) {
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -122,7 +105,6 @@ class BQSHTTPManager {
             return (documentsURL, [.removePreviousFile])
         }
         let url = URL(string: filePath)
-        
         Alamofire.download(url!, to: destination).downloadProgress(closure: { (progress) in
             print("progress:\(progress.fractionCompleted)")
         }).responseData { response in
@@ -131,7 +113,10 @@ class BQSHTTPManager {
             }
         }
     }
-    //下载zip文件
+    
+    /**
+    下载zip文件
+    */
     func downloadZipFile(filePath: String, fileName: String, progressCall: @escaping (_ progress:Float) -> Void) -> Void {
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -141,9 +126,7 @@ class BQSHTTPManager {
             return (documentsURL, [.removePreviousFile])
         }
         let url = URL(string: filePath)
-        
         Alamofire.download(url!, to: destination).downloadProgress(closure: { (progress) in
-            //            print("progress1:\(progress.fractionCompleted)")
             progressCall(Float(progress.fractionCompleted))
         }).responseData { response in
             if let destinationUrl = response.destinationURL {

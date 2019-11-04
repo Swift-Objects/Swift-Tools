@@ -43,13 +43,13 @@ class BQSCameraHandler: NSObject {
     
     //选择视频
     func selectVideo() {
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            imagePicker.mediaTypes = [kUTTypeMovie as String]
-            imagePicker.delegate = self
-            currentVC?.present(imagePicker, animated: true, completion: nil)
-//        }
+        //        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.mediaTypes = [kUTTypeMovie as String]
+        imagePicker.delegate = self
+        currentVC?.present(imagePicker, animated: true, completion: nil)
+        //        }
     }
     
     //提示
@@ -92,9 +92,9 @@ extension BQSCameraHandler: UIImagePickerControllerDelegate, UINavigationControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         // 判断是图片还是视频
         let mediaType = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as! [String]
         if mediaType == [kUTTypeVideo as String] {
@@ -121,10 +121,10 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }

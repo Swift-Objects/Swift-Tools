@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableController: BQSMainViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class TableController: UIViewController, UITableViewDelegate, UITableViewDataSou
     let cellIdentifier = "UITableViewCell"
     
     func addTableView() {
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight))
+        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: BQSScreenWidth, height: ScreenHeight))
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)

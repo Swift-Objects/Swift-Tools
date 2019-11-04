@@ -11,7 +11,7 @@ import UIKit
 let collectionViewWidth = UIScreen.main.bounds.width - 21
 let ScreenHeight = UIScreen.main.bounds.height
 
-class HorizontalCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HorizontalCollectionViewController: BQSMainViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let identifier = "CollectionViewCell"
     var collectionView: UICollectionView?
@@ -26,7 +26,7 @@ class HorizontalCollectionViewController: UIViewController, UICollectionViewDele
     }
     
     func addCollectionView() {
-        
+        // 如果是水平滚动,一行显示,left的宽度是spacing的一半
         let left: CGFloat = 5.5
         let spacing: CGFloat = 11
         let top: CGFloat = 3

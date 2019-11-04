@@ -74,8 +74,6 @@ func fontSize(size: CGFloat) -> CGFloat {
 //userId
 var UserId = "666"
 
-
-
 //MARK: ----------------- 文件路径 -----------------
 // MARK: documentPath
 let documentPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!

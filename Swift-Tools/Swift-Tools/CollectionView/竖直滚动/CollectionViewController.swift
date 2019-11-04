@@ -8,22 +8,18 @@
 
 import UIKit
 
-
-class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class CollectionViewController: BQSMainViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     let identifier = "CollectionViewCell"
     var collectionView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = .orange
         
+        self.view.backgroundColor = .orange
         addCollectionView()
     }
     
     func addCollectionView() {
-        
         let left: CGFloat = 3
         let spacing: CGFloat = 3
         let number: Int = 3
@@ -40,13 +36,10 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         let nib = UINib(nibName: identifier, bundle: nil)
         collectionView?.register(nib, forCellWithReuseIdentifier: identifier)
         self.view.addSubview(collectionView!)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionViewCell
-        
         return cell
     }
     
@@ -58,18 +51,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         return 23
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("点击:\(indexPath)")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        //
+        
     }
     
-
-    
-
 }

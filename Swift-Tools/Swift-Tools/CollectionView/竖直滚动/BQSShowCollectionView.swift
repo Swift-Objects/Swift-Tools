@@ -19,17 +19,14 @@ class BQSShowCollectionView: UIView {
     var cellIdentifier: String?         //cell标识
     var layout: UICollectionViewFlowLayout?
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
     
     func addCollectionView(){
         layout = UICollectionViewFlowLayout()

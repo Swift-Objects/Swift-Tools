@@ -57,7 +57,7 @@ class HorizontalScrollLayout: UICollectionViewFlowLayout {
             let page = indexPath.row / (lineNumber! * rowNumber!)
             let remainder = indexPath.row % rowNumber!
             //page根据不同的分区,加上之前的分区的页数
-            let pageHH = CGFloat(page) * ScreenWidth
+            let pageHH = CGFloat(page) * BQSScreenWidth
             let hhh2 = (spacing! + itemWidth)
             let hhh3 = CGFloat(remainder)
             let hhh = hhh2 * hhh3
