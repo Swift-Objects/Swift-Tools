@@ -53,7 +53,7 @@ class BQSCameraHandler: NSObject {
     }
     
     //提示
-    func showAlertController() {
+    internal func showAlertController() {
         let alert = UIAlertController(title: "错误", message: "设备不支持相机", preferredStyle: UIAlertController.Style.actionSheet)
         let action = UIAlertAction(title: "确定", style: .cancel, handler: nil)
         alert.addAction(action)

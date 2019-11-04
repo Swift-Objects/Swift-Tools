@@ -16,9 +16,30 @@ class BQSHTTPManager {
     static let shared = BQSHTTPManager()
     private init() {}
     
+   static let sharedSessionManager: Alamofire.SessionManager = {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 6
+        return Alamofire.SessionManager(configuration: configuration)
+    }()
+    
     //GET-请求
     func getRequestWithURL(path: String, parameter: [String: Any], success: @escaping(_ result: [String: Any]) -> Void, failure: @escaping(_ error: NSError) -> Void) -> Void {
         let urlString = mainPath + path
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.timeoutInterval = 10
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // 设置超时
+//        BQSHTTPManager.sharedSessionManager.request(urlString, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: header).response { (dataResponse) in
+//            if dataResponse.error != nil {
+//                failure(dataResponse.error! as NSError)
+//            }
+//            if let json = dataResponse.data {
+//                success(json as! [String: Any])
+//            }
+//            return
+//        }
+        
         Alamofire.request(urlString, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: header).responseJSON { (responseData) in
             if responseData.error != nil {
                 failure(responseData.error! as NSError)
